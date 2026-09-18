@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --green-primary: #16803A;
+  --green-dark: #0B4F2F;
+  --green-light: #f0fdf4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Card hover animation */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated gradient background for hero */
+.hero-bg {
+  background: linear-gradient(135deg, #0B4F2F 0%, #16803A 50%, #1a9c48 100%);
+}
+
+/* Risk color utilities */
+.risk-low { color: #16803A; }
+.risk-medium { color: #d97706; }
+.risk-high { color: #dc2626; }
+
+.risk-bg-low { background-color: #f0fdf4; border-color: #bbf7d0; }
+.risk-bg-medium { background-color: #fffbeb; border-color: #fde68a; }
+.risk-bg-high { background-color: #fef2f2; border-color: #fecaca; }
+
+/* Leaflet map container */
+.leaflet-container {
+  border-radius: 12px;
+}
+
+/* Chat bubble animations */
+@keyframes chatBubbleIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chat-bubble {
+  animation: chatBubbleIn 0.3s ease-out;
+}
+
+/* Skeleton loader */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+/* Demo mode banner */
+.demo-banner {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+  color: white;
+  text-align: center;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Sidebar active item */
+.sidebar-active {
+  background: linear-gradient(90deg, #16803A15, #16803A08);
+  border-right: 3px solid #16803A;
+}
+
+/* Page fade-in */
+.page-enter {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Circular progress ring */
+.circular-progress {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* NDVI color zones */
+.zone-healthy { background-color: #22c55e; }
+.zone-stress { background-color: #fbbf24; }
+.zone-critical { background-color: #ef4444; }
+
+/* Toast notification */
+.toast-enter {
+  animation: toastIn 0.3s ease-out;
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
